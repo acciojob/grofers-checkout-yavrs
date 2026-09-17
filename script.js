@@ -4,29 +4,21 @@ document.body.appendChild(getSumBtn);
 
 const getSum = () => {
 
-    // Saare prices select karo
-    const prices = document.querySelectorAll(".prices");
+    const price = document.querySelectorAll(".prices");
 
     let total = 0;
 
-    // Har price ko add karo
-    prices.forEach(price => {
-        total += Number(price.innerText);
+    price.forEach(item => {
+        total += Number(item.innerText);
     });
 
-    // New row create karo
     const row = document.createElement("tr");
-
-    // New cell create karo
     const cell = document.createElement("td");
 
-    // Total cell mein daalo
     cell.innerText = total;
 
-    // Cell -> Row
     row.appendChild(cell);
 
-    // Row -> Table
     document.querySelector("table").appendChild(row);
 };
 
