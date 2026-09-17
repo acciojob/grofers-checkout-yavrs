@@ -4,22 +4,32 @@ document.body.appendChild(getSumBtn);
 
 const getSum = () => {
 
-    const price = document.querySelectorAll(".prices");
+    // HTML mein class "price" hai
+    const prices = document.querySelectorAll(".price");
 
     let total = 0;
 
-    price.forEach(item => {
-        total += Number(item.innerText);
+    prices.forEach(price => {
+        total += Number(price.innerText);
     });
 
+    // New row
     const row = document.createElement("tr");
+
+    // New cell
     const cell = document.createElement("td");
 
+    // Total price
     cell.innerText = total;
 
     row.appendChild(cell);
 
+    // Add row to table
     document.querySelector("table").appendChild(row);
 };
 
+// Button click
 getSumBtn.addEventListener("click", getSum);
+
+// Automatically calculate on page load
+getSum();
